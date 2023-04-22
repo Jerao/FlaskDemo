@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		VERSION = '1.0.0'
-		DOCKERHUB_CREDENTIALS = credentials('docker-jrao-credentials')
+		DOCKERHUB_CREDENTIALS = credentials('docker-jrao1-credentials')
 	}
 	stages {
 		stage('Build') {
@@ -29,8 +29,8 @@ pipeline {
                 {
                         steps {
 				sh 'sudo chmod 666 /var/run/docker.sock'
-                                sh 'docker build -t Jrao/flaskdemo:$VERSION .'
-                                sh 'docker build -t Jrao/flaskdemo:latest .'
+                                sh 'docker build -t Jerao/flaskdemo:$VERSION .'
+                                sh 'docker build -t Jerao/flaskdemo:latest .'
                         }
                 }
 
@@ -44,8 +44,8 @@ pipeline {
 		stage('Push Image to Dockerhub') {
 
 			steps {
-				sh 'docker push Jrao/flaskdemo:$VERSION'
-				sh 'docker push Jrao/flaskdemo:latest'
+				sh 'docker push Jerao/flaskdemo:$VERSION'
+				sh 'docker push Jerao/flaskdemo:latest'
 			}
 		}
 
