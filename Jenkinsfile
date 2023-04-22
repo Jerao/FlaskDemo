@@ -29,8 +29,8 @@ pipeline {
                 {
                         steps {
 				sh 'sudo chmod 666 /var/run/docker.sock'
-                                sh 'docker build -t Jerao/flaskdemo:$VERSION .'
-                                sh 'docker build -t Jerao/flaskdemo:latest .'
+                                sh 'docker build -t jrao1/flaskdemo:$VERSION .'
+                                sh 'docker build -t jrao1/flaskdemo:latest .'
                         }
                 }
 
@@ -44,8 +44,8 @@ pipeline {
 		stage('Push Image to Dockerhub') {
 
 			steps {
-				sh 'docker push Jerao/flaskdemo:$VERSION'
-				sh 'docker push Jerao/flaskdemo:latest'
+				sh 'docker push jrao1/flaskdemo:$VERSION'
+				sh 'docker push jrao1/flaskdemo:latest'
 			}
 		}
 
