@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		VERSION = '1.0.0'
-		DOCKERHUB_CREDENTIALS = credentials('docker-baoqiangy-credentials')
+		DOCKERHUB_CREDENTIALS = credentials('docker-jrao1-credentials')
 	}
 	stages {
 		stage('Build') {
